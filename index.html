@@ -17,10 +17,12 @@
 <!-- HERO -->
 <section class="hero">
   <h1>Pelopor Muamalah Emas Logam Mulia<br>di Bojonegoro</h1>
-  <p>
-    Harga lebih murah dibanding marketplace ijo & oranye.<br>
-    Transparan, syariah, dan bisa dipantau realtime.
-  </p>
+ <p>
+  Transparan dan sesuai prinsip syariah.<br>
+  Harga emas dapat dipantau secara realtime.<br>
+  Pembayaran tunai di tempat (COD).<br>
+  Keaslian emas dapat diverifikasi melalui aplikasi <strong>CertiEye ANTAM</strong>.
+</p>
   <a href="#harga" class="btn-primary">Lihat Harga Emas</a>
 </section>
 
@@ -97,45 +99,35 @@
 
 
 <!-- FORM ORDER -->
-<section class="order-section">
-  <div class="order-card">
-    <h2>Form Pemesanan</h2>
+<section id="order" class="card">
+  <h2>Form Pemesanan</h2>
 
-    <form id="orderForm">
-      <div class="form-group">
-        <label>Nama Lengkap</label>
-        <input type="text" id="nama" placeholder="Masukkan nama lengkap" required />
-      </div>
+  <form id="orderForm">
+    <label>Nama Lengkap</label>
+    <input type="text" id="nama" placeholder="Masukkan nama lengkap" required />
 
-      <div class="form-group">
-        <label>Nomor WhatsApp</label>
-        <input type="tel" id="wa" placeholder="08xxxxxxxxxx" required />
-      </div>
+    <!-- <label>Nomor WhatsApp</label>
+    <input type="tel" id="wa" placeholder="08xxxxxxxxxx" required /> -->
 
-      <div class="form-group">
-        <label>Berat (gram)</label>
-        <input type="number" id="berat" placeholder="Contoh: 5" required />
-      </div>
+    <label>Berat (gram)</label>
+    <input type="number" id="berat" placeholder="Contoh: 5" required />
 
-      <div class="form-group">
-        <label>Jenis Transaksi</label>
-        <select id="jenis">
-          <option value="Beli">Beli</option>
-          <option value="Jual">Jual</option>
-        </select>
-      </div>
+    <label>Jenis Transaksi</label>
+    <select id="jenisOrder">
+      <option value="Beli">Beli</option>
+      <option value="Jual">Jual</option>
+    </select>
 
-      <button type="submit" class="btn-primary">Kirim Pesanan</button>
-    </form>
+    <button type="submit">Kirim Pesanan</button>
+  </form>
 
-    <a
-      href="https://wa.me/6285741162115"
-      target="_blank"
-      class="btn-wa"
-    >
-      Konsultasi via WhatsApp
-    </a>
-  </div>
+  <a
+    href="https://wa.me/6285741162115"
+    target="_blank"
+    class="wa"
+  >
+    Konsultasi via WhatsApp
+  </a>
 </section>
 
 

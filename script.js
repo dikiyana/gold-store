@@ -31,7 +31,8 @@ document.getElementById("orderForm").addEventListener("submit", function (e) {
   const nama = document.getElementById("nama").value;
   const wa = document.getElementById("wa").value;
   const berat = document.getElementById("berat").value;
-  const jenis = document.getElementById("jenis").value;
+  const jenis = document.getElementById("jenisOrder").value;
+
 
   const pesan = `Assalamu’alaikum,
 Saya ingin *${jenis} emas*.
