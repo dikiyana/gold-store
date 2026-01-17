@@ -69,7 +69,7 @@
 
 <!-- KALKULATOR -->
 <section class="card">
-  <h2>Kalkulator Transaksi</h2>
+  <h2>Kalkulator Transaksi Emas</h2>
 
   <label>Jenis Transaksi</label>
   <select id="jenis">
@@ -90,12 +90,22 @@
     <option value="100">100 gram</option>
   </select>
 
+  <label>Jumlah Gram</label>
+  <input
+    type="number"
+    id="jumlah"
+    min="1"
+    step="1"
+    placeholder="Contoh: 3"
+  />
+
   <button onclick="hitung()">Hitung Total</button>
 
   <div class="result">
     Total Harga: Rp <span id="total">0</span>
   </div>
 </section>
+
 
 
 <!-- FORM ORDER -->
