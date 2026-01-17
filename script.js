@@ -24,3 +24,26 @@ function hitung() {
   document.getElementById("total").innerText =
     harga.toLocaleString("id-ID");
 }
+
+document.getElementById("orderForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const nama = document.getElementById("nama").value;
+  const wa = document.getElementById("wa").value;
+  const berat = document.getElementById("berat").value;
+  const jenis = document.getElementById("jenis").value;
+
+  const pesan = `Assalamu’alaikum,
+Saya ingin *${jenis} emas*.
+
+Nama: ${nama}
+No WA: ${wa}
+Berat: ${berat} gram
+
+Mohon info harga hari ini.`;
+
+  const nomorAdmin = "6285741162115";
+  const url = `https://wa.me/${nomorAdmin}?text=${encodeURIComponent(pesan)}`;
+
+  window.open(url, "_blank");
+});
