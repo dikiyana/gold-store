@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Muamalah Emas Digital</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Muamalah Emas</h1>
+  <p>Jual & Beli Emas Sesuai Syariah</p>
+</header>
+
+<section class="harga">
+  <h2>Harga Emas Hari Ini</h2>
+  <p>Beli: <strong>Rp <span id="hargaBeli">1.050.000</span> / gram</strong></p>
+  <p>Jual: <strong>Rp <span id="hargaJual">1.020.000</span> / gram</strong></p>
+</section>
+
+<section class="kalkulator">
+  <h2>Kalkulator Transaksi</h2>
+
+  <label>Jenis Transaksi</label>
+  <select id="jenis">
+    <option value="beli">Beli Emas</option>
+    <option value="jual">Jual Emas</option>
+  </select>
+
+  <label>Berat (gram)</label>
+  <input type="number" id="berat" placeholder="Contoh: 5">
+
+  <button onclick="hitung()">Hitung</button>
+
+  <p class="hasil">Total: Rp <span id="total">0</span></p>
+</section>
+
+<section class="form">
+  <h2>Form Pemesanan</h2>
+
+  <!-- NETLIFY FORM -->
+  <form name="order-emas" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="order-emas">
+
+    <input type="text" name="nama" placeholder="Nama Lengkap" required>
+    <input type="tel" name="wa" placeholder="No WhatsApp" required>
+    <input type="number" name="berat" placeholder="Berat (gram)" required>
+
+    <select name="jenis">
+      <option value="beli">Beli</option>
+      <option value="jual">Jual</option>
+    </select>
+
+    <button type="submit">Kirim Order</button>
+  </form>
+
+  <a class="wa" href="https://wa.me/628xxxxxxxxxx" target="_blank">
+    Order via WhatsApp
+  </a>
+</section>
+
+<footer>
+  <p>© 2026 Muamalah Emas</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
