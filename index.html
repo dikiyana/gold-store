@@ -2,49 +2,71 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Muamalah Emas Digital</title>
+  <title>Logam Mulia Bojonegoro</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>Muamalah Emas</h1>
-  <p>Jual & Beli Emas Sesuai Syariah</p>
-</header>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="brand">Logam Mulia Bojonegoro</div>
+  <a href="#order" class="cta">Order</a>
+</nav>
 
-<section class="harga">
-  <h2>Harga Emas Hari Ini</h2>
-  <p>Beli: <strong>Rp <span id="hargaBeli">1.050.000</span> / gram</strong></p>
-  <p>Jual: <strong>Rp <span id="hargaJual">1.020.000</span> / gram</strong></p>
+<!-- HERO -->
+<section class="hero">
+  <h1>Pelopor Muamalah Emas Logam Mulia<br>di Bojonegoro</h1>
+  <p>
+    Harga lebih murah dibanding marketplace ijo & oranye.<br>
+    Transparan, syariah, dan bisa dipantau realtime.
+  </p>
+  <a href="#harga" class="btn-primary">Lihat Harga Emas</a>
 </section>
 
-<section class="kalkulator">
+<!-- HARGA -->
+<section id="harga" class="card">
+  <h2>Harga Emas Hari Ini</h2>
+  <div class="price-box">
+    <div>
+      <span>Beli</span>
+      <strong>Rp <span id="hargaBeli">1.050.000</span>/gram</strong>
+    </div>
+    <div>
+      <span>Jual</span>
+      <strong>Rp <span id="hargaJual">1.020.000</span>/gram</strong>
+    </div>
+  </div>
+  <small class="note">Harga diperbarui secara realtime melalui website</small>
+</section>
+
+<!-- KALKULATOR -->
+<section class="card">
   <h2>Kalkulator Transaksi</h2>
 
-  <label>Jenis Transaksi</label>
   <select id="jenis">
     <option value="beli">Beli Emas</option>
     <option value="jual">Jual Emas</option>
   </select>
 
-  <label>Berat (gram)</label>
-  <input type="number" id="berat" placeholder="Contoh: 5">
+  <input type="number" id="berat" placeholder="Berat emas (gram)">
 
-  <button onclick="hitung()">Hitung</button>
+  <button onclick="hitung()">Hitung Total</button>
 
-  <p class="hasil">Total: Rp <span id="total">0</span></p>
+  <div class="result">
+    Total: Rp <span id="total">0</span>
+  </div>
 </section>
 
-<section class="form">
+<!-- FORM ORDER -->
+<section id="order" class="card">
   <h2>Form Pemesanan</h2>
 
-  <!-- NETLIFY FORM -->
   <form name="order-emas" method="POST" data-netlify="true">
     <input type="hidden" name="form-name" value="order-emas">
 
     <input type="text" name="nama" placeholder="Nama Lengkap" required>
-    <input type="tel" name="wa" placeholder="No WhatsApp" required>
+    <input type="tel" name="wa" placeholder="Nomor WhatsApp" required>
     <input type="number" name="berat" placeholder="Berat (gram)" required>
 
     <select name="jenis">
@@ -52,16 +74,20 @@
       <option value="jual">Jual</option>
     </select>
 
-    <button type="submit">Kirim Order</button>
+    <button type="submit">Kirim Pesanan</button>
   </form>
 
-  <a class="wa" href="https://wa.me/628xxxxxxxxxx" target="_blank">
-    Order via WhatsApp
+  <a class="wa" href="https://wa.me/628XXXXXXXXXX" target="_blank">
+    Konsultasi via WhatsApp
   </a>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 Muamalah Emas</p>
+  <p>
+    © 2026 Logam Mulia Bojonegoro<br>
+    Muamalah emas sesuai prinsip syariah
+  </p>
 </footer>
 
 <script src="script.js"></script>

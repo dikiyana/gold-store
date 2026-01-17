@@ -1,63 +1,112 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #f7f7f7;
   margin: 0;
-  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f4f4;
+  color: #222;
 }
 
-header {
-  background: #c9a24d;
+.navbar {
+  background: #111;
+  color: #d4af37;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.cta {
+  color: #111;
+  background: #d4af37;
+  padding: 8px 14px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.hero {
+  background: linear-gradient(135deg, #111, #333);
   color: white;
+  padding: 60px 20px;
   text-align: center;
-  padding: 20px;
 }
 
-section {
+.hero h1 {
+  margin-bottom: 15px;
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 20px;
+  background: #d4af37;
+  color: #111;
+  padding: 12px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.card {
   background: white;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 8px;
+  margin: 25px auto;
+  padding: 25px;
+  max-width: 600px;
+  border-radius: 10px;
 }
 
-h2 {
-  margin-top: 0;
+.price-box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.price-box strong {
+  font-size: 18px;
+}
+
+.note {
+  display: block;
+  margin-top: 10px;
+  color: #777;
 }
 
 input, select, button {
   width: 100%;
-  padding: 10px;
-  margin: 8px 0;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 15px;
 }
 
 button {
-  background: #c9a24d;
-  color: white;
+  background: #111;
+  color: #d4af37;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-button:hover {
-  opacity: 0.9;
-}
-
-.hasil {
+.result {
+  margin-top: 15px;
   font-size: 18px;
   font-weight: bold;
 }
 
 .wa {
   display: block;
-  text-align: center;
   margin-top: 15px;
   background: #25D366;
   color: white;
-  padding: 10px;
+  text-align: center;
+  padding: 12px;
+  border-radius: 6px;
   text-decoration: none;
-  border-radius: 5px;
 }
 
 footer {
   text-align: center;
-  padding: 15px;
-  color: #666;
+  padding: 20px;
+  color: #777;
+  font-size: 14px;
 }
