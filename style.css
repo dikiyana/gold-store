@@ -110,3 +110,31 @@ footer {
   color: #777;
   font-size: 14px;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th {
+  background: #1f3c88;
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+label {
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
+}

@@ -40,23 +40,61 @@
   <small class="note">Harga diperbarui secara realtime melalui website</small>
 </section>
 
+<!-- Tabel Harga Emas -->
+<section class="card">
+  <h2>Tabel Harga Emas Logam Mulia Antam</h2>
+  <p class="note">
+    Harga luar Jabodetabek +Rp5.000/gram
+  </p>
+
+  <table class="harga-table">
+    <tr>
+      <th>Ukuran (gram)</th>
+      <th>Harga Beli</th>
+    </tr>
+    <tr><td>100</td><td>Rp 284.400.000</td></tr>
+    <tr><td>50</td><td>Rp 143.200.000</td></tr>
+    <tr><td>25</td><td>Rp 72.000.000</td></tr>
+    <tr><td>10</td><td>Rp 29.080.000</td></tr>
+    <tr><td>5</td><td>Rp 14.615.000</td></tr>
+    <tr><td>3</td><td>Rp 9.032.000</td></tr>
+    <tr><td>2</td><td>Rp 6.040.000</td></tr>
+    <tr><td>1</td><td>Rp 3.054.000</td></tr>
+    <tr><td>0.5</td><td>Rp 1.597.000</td></tr>
+  </table>
+</section>
+
+
 <!-- KALKULATOR -->
 <section class="card">
   <h2>Kalkulator Transaksi</h2>
 
+  <label>Jenis Transaksi</label>
   <select id="jenis">
     <option value="beli">Beli Emas</option>
-    <option value="jual">Jual Emas</option>
+    <option value="jual">Jual / Buyback</option>
   </select>
 
-  <input type="number" id="berat" placeholder="Berat emas (gram)">
+  <label>Pilih Gramasi</label>
+  <select id="gramasi">
+    <option value="0.5">0.5 gram</option>
+    <option value="1">1 gram</option>
+    <option value="2">2 gram</option>
+    <option value="3">3 gram</option>
+    <option value="5">5 gram</option>
+    <option value="10">10 gram</option>
+    <option value="25">25 gram</option>
+    <option value="50">50 gram</option>
+    <option value="100">100 gram</option>
+  </select>
 
   <button onclick="hitung()">Hitung Total</button>
 
   <div class="result">
-    Total: Rp <span id="total">0</span>
+    Total Harga: Rp <span id="total">0</span>
   </div>
 </section>
+
 
 <!-- FORM ORDER -->
 <section id="order" class="card">
