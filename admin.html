@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard | AurumGold</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+
+<!-- Layar dicegat sampai status login terverifikasi, mencegah "flash" konten admin -->
+<div id="authGate" class="auth-gate">
+  <p>Memeriksa autentikasi...</p>
+</div>
+
+<div id="adminApp" class="hidden">
+
+  <!-- HEADER DASHBOARD -->
+  <header class="admin-header">
+    <div class="admin-brand">
+      <span class="login-brand-gold">Aurum</span>Gold <span class="admin-tag">Admin</span>
+    </div>
+    <div class="admin-header-right">
+      <span id="adminEmail" class="admin-email"></span>
+      <button id="logoutBtn" class="btn-secondary">Logout</button>
+    </div>
+  </header>
+
+  <main class="admin-main">
+
+    <!-- BANNER STATUS KONEKSI -->
+    <div id="offlineBanner" class="alert alert-warning hidden">
+      ⚠️ Koneksi internet terputus. Perubahan tidak akan tersimpan sampai Anda online kembali.
+    </div>
+
+    <!-- LAST UPDATED -->
+    <section class="card admin-card">
+      <h2>Status Harga Saat Ini</h2>
+      <p class="last-updated">
+        Terakhir diperbarui: <strong id="lastUpdated">Memuat...</strong>
+      </p>
+      <p class="last-updated">
+        Oleh: <strong id="lastUpdatedBy">-</strong>
+      </p>
+    </section>
+
+    <!-- NOTIFIKASI GLOBAL -->
+    <div id="formAlert" class="alert hidden"></div>
+
+    <!-- FORM HARGA BELI & JUAL -->
+    <section class="card admin-card">
+      <h2>Perbarui Harga Emas</h2>
+      <p class="note">Harga Beli ditentukan per gramasi. Harga Jual berlaku sama untuk semua gramasi.</p>
+
+      <form id="priceForm">
+        <h3 class="form-subtitle">Harga Beli (Rp / keping)</h3>
+
+        <div class="price-grid">
+          <div class="price-field">
+            <label for="buy-0_5">0.5 gram</label>
+            <input type="number" id="buy-0_5" min="0" step="1" required />
+            <span class="field-error" id="err-buy-0_5"></span>
+          </div>
+          <div class="price-field">
+            <label for="buy-1">1 gram</label>
+            <input type="number" id="buy-1" min="0" step="1" required />
+            <span class="field-error" id="err-buy-1"></span>
+          </div>
+          <div class="price-field">
+            <label for="buy-2">2 gram</label>
+            <input type="number" id="buy-2" min="0" step="1" required />
+            <span class="field-error" id="err-buy-2"></span>
+          </div>
+          <div class="price-field">
+            <label for="buy-3">3 gram</label>
+            <input type="number" id="buy-3" min="0" step="1" required />
+            <span class="field-error" id="err-buy-3"></span>
+          </div>
+          <div class="price-field">
+            <label for="buy-5">5 gram</label>
+            <input type="number" id="buy-5" min="0" step="1" required />
+            <span class="field-error" id="err-buy-5"></span>
+          </div>
+          <div class="price-field">
+            <label for="buy-10">10 gram</label>
+            <input type="number" id="buy-10" min="0" step="1" required />
+            <span class="field-error" id="err-buy-10"></span>
+          </div>
+          <div class="price-field">
+            <label for="buy-25">25 gram</label>
+            <input type="number" id="buy-25" min="0" step="1" required />
+            <span class="field-error" id="err-buy-25"></span>
+          </div>
+          <div class="price-field">
+            <label for="buy-50">50 gram</label>
+            <input type="number" id="buy-50" min="0" step="1" required />
+            <span class="field-error" id="err-buy-50"></span>
+          </div>
+          <div class="price-field">
+            <label for="buy-100">100 gram</label>
+            <input type="number" id="buy-100" min="0" step="1" required />
+            <span class="field-error" id="err-buy-100"></span>
+          </div>
+        </div>
+
+        <h3 class="form-subtitle">Harga Jual (Rp / gram, berlaku untuk semua gramasi)</h3>
+        <div class="price-field price-field-single">
+          <label for="sellPrice">Harga Jual</label>
+          <input type="number" id="sellPrice" min="0" step="1" required />
+          <span class="field-error" id="err-sellPrice"></span>
+        </div>
+
+        <button type="submit" id="saveBtn">Simpan Perubahan</button>
+      </form>
+    </section>
+
+  </main>
+</div>
+
+<script type="module" src="js/admin.js"></script>
+</body>
+</html>

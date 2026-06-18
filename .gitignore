@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Firebase
+.firebase/
+
+# Netlify
+.netlify/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*

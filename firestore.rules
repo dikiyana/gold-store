@@ -1,0 +1,72 @@
+rules_version = '2';
+
+// =====================================================================
+// FIRESTORE SECURITY RULES — AurumGold
+// =====================================================================
+// Cara deploy:
+// 1. Buka Firebase Console > Firestore Database > Rules
+// 2. Copy seluruh isi file ini, paste, lalu klik "Publish"
+//    (atau gunakan Firebase CLI: firebase deploy --only firestore:rules)
+//
+// Prinsip keamanan yang diterapkan:
+// - Siapa pun (termasuk pengunjung tidak login) BISA membaca harga emas
+//   -> diperlukan agar index.html bisa menampilkan harga tanpa login.
+// - HANYA user yang sudah login (admin) yang BISA menulis/mengubah harga.
+// - Validasi struktur data juga diterapkan di sini sebagai lapisan kedua
+//   (defense in depth), selain validasi di sisi client (admin.js).
+// =====================================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // -------------------------------------------------------------
+    // Collection: gold_prices
+    // Document: current
+    // -------------------------------------------------------------
+    match /gold_prices/{docId} {
+
+      // Siapa pun boleh membaca harga (publik, tidak perlu login)
+      allow read: if true;
+
+      // Hanya user yang sudah login (admin) yang boleh menulis,
+      // DAN data yang dikirim harus sesuai struktur yang diharapkan.
+      allow write: if request.auth != null
+                   && isValidGoldPriceData(request.resource.data);
+    }
+
+    // -------------------------------------------------------------
+    // Collection: price_history
+    // Setiap dokumen adalah snapshot historis dari satu kali update.
+    // -------------------------------------------------------------
+    match /price_history/{docId} {
+
+      // Riwayat harga juga bisa dibaca publik (berguna untuk fitur
+      // grafik/chart historis di masa depan).
+      allow read: if true;
+
+      // Hanya admin yang login boleh menambahkan entri history.
+      // Tidak ada update/delete -> history bersifat append-only (immutable).
+      allow create: if request.auth != null
+                    && isValidGoldPriceData(request.resource.data);
+      allow update, delete: if false;
+    }
+
+    // -------------------------------------------------------------
+    // Default deny untuk semua collection lain yang tidak didefinisikan
+    // -------------------------------------------------------------
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+
+  // -------------------------------------------------------------
+  // FUNCTION: Validasi struktur data harga emas
+  // -------------------------------------------------------------
+  function isValidGoldPriceData(data) {
+    return data.keys().hasAll(['buyPrices', 'sellPrice', 'updatedAt', 'updatedBy'])
+      && data.buyPrices is map
+      && data.sellPrice is number
+      && data.sellPrice >= 0
+      && data.updatedBy is string;
+  }
+}

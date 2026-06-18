@@ -1,0 +1,254 @@
+/* =====================================================================
+   ADMIN & LOGIN STYLES
+   Tema: Luxury Gold / Black / White / Dark Gray
+   File ini melengkapi style.css (tidak menggantikan), khusus untuk
+   halaman admin.html dan login.html.
+===================================================================== */
+
+:root {
+  --gold: #d4af37;
+  --gold-light: #f1d98b;
+  --black: #111111;
+  --dark-gray: #2b2b2b;
+  --white: #ffffff;
+  --gray-bg: #f4f4f4;
+  --danger: #c0392b;
+  --success: #1e7e34;
+  --warning: #b8860b;
+}
+
+.admin-body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--gray-bg);
+  color: var(--black);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ===== AUTH GATE (loading state sebelum auth terverifikasi) ===== */
+.auth-gate {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--black);
+  color: var(--gold);
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* ===== LOGIN PAGE ===== */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--black), var(--dark-gray));
+  padding: 20px;
+}
+
+.login-card {
+  background: var(--white);
+  padding: 40px 35px;
+  border-radius: 16px;
+  max-width: 380px;
+  width: 100%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+
+.login-brand {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 4px;
+}
+
+.login-brand-gold {
+  color: var(--gold);
+}
+
+.login-subtitle {
+  color: #777;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.login-card form {
+  text-align: left;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 22px;
+  color: #777;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--gold);
+}
+
+/* ===== ADMIN HEADER ===== */
+.admin-header {
+  background: var(--black);
+  color: var(--white);
+  padding: 18px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.admin-brand {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.admin-tag {
+  background: var(--gold);
+  color: var(--black);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 5px;
+  margin-left: 8px;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+
+.admin-header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.admin-email {
+  color: var(--gold-light);
+  font-size: 14px;
+}
+
+.btn-secondary {
+  width: auto !important;
+  margin-top: 0 !important;
+  background: transparent !important;
+  color: var(--white) !important;
+  border: 1px solid var(--gold) !important;
+  padding: 10px 18px !important;
+  font-size: 14px;
+}
+
+.btn-secondary:hover {
+  background: var(--gold) !important;
+  color: var(--black) !important;
+}
+
+/* ===== ADMIN MAIN ===== */
+.admin-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 28px 20px 60px;
+}
+
+.admin-card {
+  max-width: 100%;
+}
+
+.last-updated {
+  margin: 6px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.form-subtitle {
+  margin-top: 26px;
+  margin-bottom: 6px;
+  color: var(--dark-gray);
+  font-size: 16px;
+  border-bottom: 2px solid var(--gold-light);
+  padding-bottom: 8px;
+}
+
+/* ===== PRICE GRID (form harga beli per gramasi) ===== */
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.price-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-field label {
+  font-size: 13px;
+  margin-top: 0;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+.price-field input {
+  margin-top: 0;
+}
+
+.price-field-single {
+  max-width: 280px;
+}
+
+.field-error {
+  color: var(--danger);
+  font-size: 12px;
+  margin-top: 4px;
+  min-height: 14px;
+  display: block;
+}
+
+.input-error {
+  border-color: var(--danger) !important;
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12) !important;
+}
+
+/* ===== ALERTS / NOTIFICATIONS ===== */
+.alert {
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.alert-success {
+  background: #e6f4ea;
+  color: var(--success);
+  border: 1px solid #b7e1c0;
+}
+
+.alert-error {
+  background: #fbeae8;
+  color: var(--danger);
+  border: 1px solid #f0c3bd;
+}
+
+.alert-warning {
+  background: #fff6e0;
+  color: var(--warning);
+  border: 1px solid #f0dca0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .price-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

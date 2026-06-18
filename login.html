@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Admin | AurumGold</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+
+<div class="login-wrapper">
+  <div class="login-card">
+    <div class="login-brand">
+      <span class="login-brand-gold">Aurum</span>Gold
+    </div>
+    <p class="login-subtitle">Admin Dashboard Login</p>
+
+    <form id="loginForm">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="admin@aurumgold.com" required autocomplete="username" />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="••••••••" required autocomplete="current-password" />
+
+      <div id="loginError" class="alert alert-error hidden"></div>
+
+      <button type="submit" id="loginBtn">Masuk</button>
+    </form>
+
+    <a href="index.html" class="back-link">&larr; Kembali ke Website</a>
+  </div>
+</div>
+
+<script type="module" src="js/auth-page.js"></script>
+</body>
+</html>
